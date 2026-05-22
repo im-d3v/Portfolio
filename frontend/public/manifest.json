@@ -1,0 +1,24 @@
+{
+  "name": "Mohit Pal — Full-Stack Engineer",
+  "short_name": "mp.dev",
+  "description": "Full-Stack Engineer · Java · Spring Boot · React.js",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e0e14",
+  "theme_color": "#7a7aff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "180x180",
+      "purpose": "maskable"
+    }
+  ]
+}

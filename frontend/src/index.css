@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ────────────────────────────────────────────────────────── */
+:root {
+  /* Dark mode — softer near-black, eye-friendly */
+  --primary:   14 14 20;
+  --secondary: 22 22 32;
+  --elevated:  32 32 46;
+  --content:   232 232 244;
+  --muted:     154 154 176;
+  --faint:     94 94 118;
+  --accent:    122 122 255;
+  --border:    255 255 255;
+  --grid-color:  rgba(255,255,255,0.05);
+  --glow-color:  rgba(122,122,255,0.20);
+}
+
+[data-theme="light"] {
+  /* Light mode — clean editorial */
+  --primary:   248 248 253;
+  --secondary: 255 255 255;
+  --elevated:  237 237 248;
+  --content:   10 10 18;
+  --muted:     92 92 116;
+  --faint:     148 148 168;
+  --accent:    78 78 238;
+  --border:    0 0 0;
+  --grid-color:  rgba(0,0,0,0.045);
+  --glow-color:  rgba(78,78,238,0.10);
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: rgb(var(--primary));
+  color: rgb(var(--content));
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────────────── */
+::selection {
+  background: rgb(var(--accent) / 0.18);
+  color: rgb(var(--content));
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--faint) / 0.5);
+  border-radius: 2px;
+}
+
+/* ─── Focus ─────────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Typography helpers ────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--content)) 0%,
+      rgb(var(--muted)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--accent)) 0%,
+      rgb(var(--accent) / 0.65) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .surface {
+    background-color: rgb(var(--secondary));
+    border: 1px solid rgb(var(--border) / 0.07);
+  }
+
+  .surface-elevated {
+    background-color: rgb(var(--elevated));
+    border: 1px solid rgb(var(--border) / 0.09);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 24px rgb(var(--accent) / 0.14);
+  }
+
+  .glow-md {
+    box-shadow: 0 0 48px rgb(var(--accent) / 0.18);
+  }
+}
+
+/* ─── Reduced motion ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

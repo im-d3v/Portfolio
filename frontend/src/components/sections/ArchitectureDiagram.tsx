@@ -354,8 +354,8 @@ export function ArchitectureDiagram() {
             </div>
 
             {/* Diagram */}
-            <div className="overflow-x-auto">
-              <div ref={containerRef} className="relative" style={{ width: '100%', minWidth: 720, height: H }}>
+            <div className="overflow-x-auto overscroll-x-contain">
+              <div ref={containerRef} className="relative" style={{ width: '100%', minWidth: dims.w < 640 ? 640 : 720, height: H }}>
 
                 {/* Layer bands */}
                 {LAYERS.map(layer => (

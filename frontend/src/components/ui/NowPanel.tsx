@@ -58,11 +58,11 @@ export function NowPanel() {
       {/* Body */}
       <div className="px-4 py-3.5 space-y-2 font-mono text-xs">
         {FIELDS.map(({ key, label }) => (
-          <div key={key} className="flex items-baseline gap-2.5 leading-relaxed">
-            <span className="text-accent/80 select-none">$</span>
+          <div key={key} className="flex items-baseline gap-2.5 leading-relaxed min-w-0">
+            <span className="text-accent/80 select-none shrink-0">$</span>
             <span className="w-[88px] text-faint shrink-0">{label}</span>
-            <span className="text-faint/50 select-none">→</span>
-            <span className="text-muted truncate">{NOW[key]}</span>
+            <span className="text-faint/50 select-none shrink-0">→</span>
+            <span className="text-muted truncate min-w-0">{NOW[key]}</span>
           </div>
         ))}
       </div>

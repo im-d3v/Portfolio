@@ -1,6 +1,6 @@
 export const HERO = {
   name: 'Mohit Pal',
-  role: 'Full-Stack Engineer',
+  role: 'Java Backend Developer | Spring Boot · Spring Cloud · Real-time Systems · AI-Native | EPAM Systems',
   tagline: 'Building production-grade backend systems and modern React interfaces.',
   tags: ['Java', 'Spring Boot', 'React.js', 'Microservices', 'Cloud-Native'],
   email: 'mohitpal2204@gmail.com',

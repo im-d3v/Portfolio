@@ -13,6 +13,29 @@ const NODE_W = 172
 const NODE_H = 90
 const H     = 640
 
+const MOBILE_FLOW = [
+  {
+    title: 'Client Layer',
+    tech: 'React 18 + TypeScript',
+    summary: 'Browser SPA sends HTTPS requests and upgrades real-time channels through a single gateway.',
+  },
+  {
+    title: 'Gateway + Security',
+    tech: 'Spring Cloud Gateway + Spring Security',
+    summary: 'JWT validation, rate limiting, service discovery, and request routing happen before business logic executes.',
+  },
+  {
+    title: 'Application Services',
+    tech: 'Spring Boot + Socket.io',
+    summary: 'REST APIs process domain logic while the WebSocket server broadcasts live updates with low latency.',
+  },
+  {
+    title: 'Data + Messaging',
+    tech: 'PostgreSQL + Redis + RabbitMQ',
+    summary: 'Durable storage, cache-backed session access, and async event fanout keep reads fast and writes resilient.',
+  },
+]
+
 /* ─── Types ──────────────────────────────────────────────────────────── */
 interface NodeDef {
   id: string
@@ -311,6 +334,33 @@ export function ArchitectureDiagram() {
             className="rounded-2xl border border-border/[0.09] overflow-hidden"
             style={{ background: 'rgb(var(--secondary))' }}
           >
+            <div className="md:hidden px-4 py-4 space-y-3.5">
+              {MOBILE_FLOW.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-border/[0.08] bg-primary px-4 py-3 text-left"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent/80">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="h-px flex-1 bg-border/[0.08]" />
+                  </div>
+                  <p className="text-sm font-semibold text-content">{item.title}</p>
+                  <p className="mt-1 text-[11px] font-mono text-faint/60">{item.tech}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{item.summary}</p>
+                </div>
+              ))}
+
+              <div className="rounded-xl border border-accent/15 bg-accent/5 px-4 py-3 text-center">
+                <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-accent/80">Desktop Diagram</p>
+                <p className="mt-2 text-sm text-muted leading-relaxed">
+                  The interactive service map is available on larger screens to avoid shrinking the full topology on phones.
+                </p>
+              </div>
+            </div>
+
+            <div className="hidden md:block">
             {/* Window chrome */}
             <div
               className="flex items-center justify-between px-5 py-3 border-b border-border/[0.07]"
@@ -355,7 +405,7 @@ export function ArchitectureDiagram() {
 
             {/* Diagram */}
             <div className="overflow-x-auto overscroll-x-contain">
-              <div ref={containerRef} className="relative" style={{ width: '100%', minWidth: dims.w < 640 ? 640 : 720, height: H }}>
+              <div ref={containerRef} className="relative" style={{ width: '100%', minWidth: 720, height: H }}>
 
                 {/* Layer bands */}
                 {LAYERS.map(layer => (
@@ -651,6 +701,7 @@ export function ArchitectureDiagram() {
                   {simIndex + 1} / {SIM_STEPS.length}
                 </span>
               )}
+            </div>
             </div>
           </div>
         </AnimatedSection>

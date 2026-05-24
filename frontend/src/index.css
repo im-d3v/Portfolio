@@ -37,6 +37,7 @@
 html {
   scroll-behavior: smooth;
   text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -48,6 +49,12 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* ─── Selection ─────────────────────────────────────────────────────────────── */

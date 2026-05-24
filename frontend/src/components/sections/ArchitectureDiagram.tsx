@@ -355,7 +355,7 @@ export function ArchitectureDiagram() {
               <div className="rounded-xl border border-accent/15 bg-accent/5 px-4 py-3 text-center">
                 <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-accent/80">Desktop Diagram</p>
                 <p className="mt-2 text-sm text-muted leading-relaxed">
-                  The interactive service map is available on larger screens to avoid shrinking the full topology on phones.
+                  The interactive service map is available on desktop.
                 </p>
               </div>
             </div>

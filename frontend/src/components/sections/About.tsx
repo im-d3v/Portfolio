@@ -8,11 +8,11 @@ import { fadeUp, EASE } from '@/lib/animations'
 
 export function About() {
   return (
-    <section id="about" className="py-28 px-6">
+    <section id="about" className="py-28 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <AnimatedSection className="grid md:grid-cols-2 gap-16 items-start">
+        <AnimatedSection className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Left — text */}
-          <div>
+          <div className="min-w-0">
             <SectionHeader
               index="01 / ABOUT"
               title="Engineered for scale, designed with purpose."
@@ -30,7 +30,7 @@ export function About() {
             ))}
 
             {/* Social row */}
-            <motion.div variants={fadeUp} className="flex items-center gap-4 mt-8">
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3 mt-8">
               <a
                 href={HERO.github}
                 target="_blank"
@@ -57,13 +57,13 @@ export function About() {
           </div>
 
           {/* Right — stats */}
-          <div>
+          <div className="min-w-0">
             <motion.div
               variants={{
                 hidden: {},
                 visible: { transition: { staggerChildren: 0.08, delayChildren: 0.2 } },
               }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-3 sm:gap-4"
             >
               {ABOUT.stats.map(stat => (
                 <motion.div
@@ -75,14 +75,14 @@ export function About() {
                       transition: { duration: 0.55, ease: EASE },
                     },
                   }}
-                  className="group p-5 rounded-xl surface
+                  className="group min-w-0 p-4 sm:p-5 rounded-xl surface
                              hover:border-border/[0.14] hover:bg-elevated
                              transition-all duration-300"
                 >
-                  <p className="text-3xl font-semibold text-content tracking-tight mb-1 group-hover:text-accent transition-colors duration-200">
+                  <p className="text-2xl sm:text-3xl font-semibold text-content tracking-tight mb-1 group-hover:text-accent transition-colors duration-200">
                     {stat.value}
                   </p>
-                  <p className="text-xs text-faint font-mono uppercase tracking-wide">
+                  <p className="text-[11px] sm:text-xs text-faint font-mono uppercase tracking-wide break-words">
                     {stat.label}
                   </p>
                 </motion.div>

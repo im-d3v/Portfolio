@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
     metric: '< 100ms',
     metricLabel: 'Sync Latency',
     github: 'https://github.com/im-d3v/Collab-Editor',
-    live: null,
+    live: 'https://collab-editor-d7mh.onrender.com',
     accent: '#7a7aff',
     caseStudy: {
       problem:
@@ -144,8 +144,8 @@ export const PROJECTS: Project[] = [
     impact: '20+ languages · Automated pipeline · Cloud-native',
     metric: '20+',
     metricLabel: 'Languages',
-    github: 'https://github.com/im-d3v',
-    live: null,
+    github: null,
+    live: 'https://drive.google.com/file/d/1TEdi95NHAPg6jXKXr3ubtLGT32RfmLcz/view',
     accent: '#5c9fff',
     caseStudy: {
       problem:
@@ -202,8 +202,8 @@ export const PROJECTS: Project[] = [
     impact: '<50ms delivery · Media support · Presence detection',
     metric: '< 50ms',
     metricLabel: 'Message Delivery',
-    github: 'https://github.com/im-d3v',
-    live: null,
+    github: 'https://github.com/im-d3v/Chat-Application',
+    live: 'https://chat-application-client-k0is.onrender.com/',
     accent: '#3ecfcf',
     caseStudy: {
       problem:

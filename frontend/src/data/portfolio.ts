@@ -256,7 +256,7 @@ export const EXPERIENCE = [
   {
     role: 'Junior Software Engineer Intern',
     company: 'EPAM Systems',
-    logo: '/logos/epam.png',
+    logo: `${import.meta.env.BASE_URL}logos/epam.png`,
     period: 'January 2025 – June 2025',
     location: 'Knowledge City, Hyderabad, India',
     type: 'Internship',
@@ -272,7 +272,7 @@ export const EXPERIENCE = [
   {
     role: 'Full-Stack Developer Intern',
     company: 'CodeQuotient',
-    logo: '/logos/cq.png',
+    logo: `${import.meta.env.BASE_URL}logos/cq.png`,
     period: 'May 2024 – July 2024',
     location: 'Mohali, India',
     type: 'Internship',

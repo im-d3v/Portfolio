@@ -458,8 +458,8 @@ export function ArchitectureDiagram() {
                       r={5}
                       fill="rgb(122,122,255)"
                       filter="url(#packet-glow2)"
-                      cx={activeEdgeInfo.waypoints.cx[0]}
-                      cy={activeEdgeInfo.waypoints.cy[0]}
+                      cx={activeEdgeInfo.waypoints.cx[0] ?? 0}
+                      cy={activeEdgeInfo.waypoints.cy[0] ?? 0}
                       animate={{
                         cx: activeEdgeInfo.waypoints.cx,
                         cy: activeEdgeInfo.waypoints.cy,

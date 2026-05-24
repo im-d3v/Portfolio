@@ -31,7 +31,6 @@ logs/
 Thumbs.db
 
 # Application secrets
-application.properties
-application.yml
+# application.properties  ← committed intentionally; all secrets use ${ENV_VAR} references
 application-dev.properties
 application-dev.yml
